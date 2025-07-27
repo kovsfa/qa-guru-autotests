@@ -12,6 +12,10 @@ public class AutomationPracticeFormTest extends TestBase {
     void autoPracticeFormTest() {
         open("/automation-practice-form");
 
+        // Remove banners
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
+
         // Name
         $("#firstName").setValue("Sofia");
         $("#lastName").setValue("Kovaleva");
