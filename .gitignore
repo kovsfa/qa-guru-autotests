@@ -3,10 +3,12 @@ build/
 !**/src/test/**
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
 
 ### Gradle
-.gradle
+.gradle/
+gradle/
+gradlew*
