@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import components.CalendarComponent;
 import components.CheckTableComponent;
+import java.util.Date;
 
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -23,8 +24,8 @@ public class RegistrationPage {
       cityInput = $("#city"),
       submitButton = $("#submit");
 
-  CalendarComponent calendarComponent = new CalendarComponent();
-  CheckTableComponent checkTableComponent = new CheckTableComponent();
+  private final CalendarComponent dateOfBirthComponent = new CalendarComponent("#dateOfBirthInput");
+  private final CheckTableComponent checkTableComponent = new CheckTableComponent();
 
   public RegistrationPage openPage() {
     open("/automation-practice-form");
@@ -62,9 +63,9 @@ public class RegistrationPage {
     return this;
   }
 
-  public RegistrationPage setDateOfBirth(String day, String month, String year) {
+  public RegistrationPage setBirthDate(Date date) {
     calendarInput.click();
-    calendarComponent.setDate(day, month, year);
+    dateOfBirthComponent.setDate(date);
 
     return this;
   }

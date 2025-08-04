@@ -1,6 +1,7 @@
 package tests;
 
 import base.TestBase;
+import java.util.Calendar;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
@@ -10,13 +11,16 @@ public class AutomationPracticeFormPageObjectsTest extends TestBase {
 
   @Test
   void successfulRegistrationTest() {
+    Calendar birthDate = Calendar.getInstance();
+    birthDate.set(1996, Calendar.NOVEMBER, 20);
+
     registrationPage.openPage()
         .setFirstName("Sofia")
         .setLastName("Kovaleva")
         .setEmail("kov.sfa@gmail.com")
         .setGender("Female")
-        .setDateOfBirth("20", "10", "1996")
         .setPhoneNumber("7058745235")
+        .setBirthDate(birthDate.getTime())
         .setSubjects("English")
         .setHobbies("Sports")
         .uploadPicture("assets/cat.jpg")
