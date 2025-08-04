@@ -56,7 +56,7 @@ public class RegistrationPage {
     return this;
   }
 
-  public RegistrationPage setUserNumber(String value) {
+  public RegistrationPage setPhoneNumber(String value) {
     userNumber.setValue(value);
 
     return this;

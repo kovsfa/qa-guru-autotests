@@ -15,8 +15,8 @@ public class AutomationPracticeFormPageObjectsTest extends TestBase {
         .setLastName("Kovaleva")
         .setEmail("kov.sfa@gmail.com")
         .setGender("Female")
-        .setUserNumber("7058745235")
         .setDateOfBirth("20", "10", "1996")
+        .setPhoneNumber("7058745235")
         .setSubjects("English")
         .setHobbies("Sports")
         .uploadPicture("assets/cat.jpg")
@@ -44,7 +44,7 @@ public class AutomationPracticeFormPageObjectsTest extends TestBase {
         .setFirstName("Sofia")
         .setLastName("Kovaleva")
         .setGender("Female")
-        .setUserNumber("7058745235")
+        .setPhoneNumber("7058745235")
         .submit();
 
     // Checks
@@ -59,7 +59,7 @@ public class AutomationPracticeFormPageObjectsTest extends TestBase {
         .setFirstName("")
         .setLastName("Kovaleva")
         .setGender("Female")
-        .setUserNumber("7058745235")
+        .setPhoneNumber("7058745235")
         .submit();
   }
 
