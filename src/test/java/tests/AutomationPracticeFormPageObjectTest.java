@@ -5,7 +5,7 @@ import java.util.Calendar;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-public class AutomationPracticeFormPageObjectsTest extends TestBase {
+public class AutomationPracticeFormPageObjectTest extends TestBase {
 
   RegistrationPage registrationPage = new RegistrationPage();
 
@@ -66,5 +66,4 @@ public class AutomationPracticeFormPageObjectsTest extends TestBase {
         .setPhoneNumber("7058745235")
         .submit();
   }
-
 }
