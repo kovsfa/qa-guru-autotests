@@ -30,6 +30,13 @@ public class RegistrationPage {
   public RegistrationPage openPage() {
     open("/automation-practice-form");
 
+    return this.closeAd();
+  }
+
+  public RegistrationPage closeAd() {
+    executeJavaScript("$('footer').remove();");
+    executeJavaScript("$('#fixedban').remove();");
+
     return this;
   }
 
@@ -109,7 +116,7 @@ public class RegistrationPage {
   }
 
   public void submit() {
-    submitButton.click();
+    submitButton.scrollIntoView(true).click();
   }
 
   public RegistrationPage checkResult(String key, String value) {
