@@ -10,8 +10,8 @@ public class CheckTableComponent {
 
   SelenideElement table = $(".table-responsive");
 
-  public void checkTable(String key, String value) {
-    $(table).$(byText(key)).parent().shouldHave(text(value));
+  public void checkTableContainsRow(String label, String value) {
+    table.$(byText(label)).parent().shouldHave(text(value));
   }
 
   public void checkTableIsNotVisible() {

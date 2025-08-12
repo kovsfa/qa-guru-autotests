@@ -121,8 +121,8 @@ public class RegistrationPage {
     submitButton.scrollIntoView(true).click();
   }
 
-  public RegistrationPage checkResult(String key, String value) {
-    checkTableComponent.checkTable(key, value);
+  public RegistrationPage checkResult(String label, String value) {
+    checkTableComponent.checkTableContainsRow(label, value);
 
     return this;
   }
