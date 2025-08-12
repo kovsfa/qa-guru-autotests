@@ -14,4 +14,8 @@ public class CheckTableComponent {
     $(table).$(byText(key)).parent().shouldHave(text(value));
   }
 
+  public void checkTableIsNotVisible() {
+    table.shouldNotBe(visible);
+  }
+
 }

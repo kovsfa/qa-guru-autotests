@@ -60,10 +60,12 @@ public class AutomationPracticeFormPageObjectTest extends TestBase {
   @Test
   void emptyNameNegativeTest() {
     registrationPage.openPage()
-        .setFirstName("")
         .setLastName("Kovaleva")
         .setGender("Female")
         .setPhoneNumber("7058745235")
         .submit();
+
+    // Checks
+    registrationPage.checkFormWasValidatedButTableIsNotVisible();
   }
 }

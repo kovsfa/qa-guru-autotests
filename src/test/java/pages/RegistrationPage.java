@@ -5,12 +5,14 @@ import components.CalendarComponent;
 import components.CheckTableComponent;
 import java.util.Date;
 
+import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
 
-  private final SelenideElement firstNameInput = $("#firstName"),
+  private final SelenideElement userForm = $("#userForm"),
+      firstNameInput = $("#firstName"),
       lastNameInput = $("#lastName"),
       userEmailInput = $("#userEmail"),
       genderWrapper = $("#genterWrapper"),
@@ -123,6 +125,11 @@ public class RegistrationPage {
     checkTableComponent.checkTable(key, value);
 
     return this;
+  }
+
+  public void checkFormWasValidatedButTableIsNotVisible() {
+    userForm.shouldHave(cssClass("was-validated"));
+    checkTableComponent.checkTableIsNotVisible();
   }
 
 }
