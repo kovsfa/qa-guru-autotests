@@ -14,7 +14,7 @@ public class TestValue {
   public static String userBirthDateFormatted = TestDataGenerator.formatDate(userBirthDate);
   public static String userSubjects = TestDataGenerator.getSubject();
   public static String userHobby = TestDataGenerator.getHobby();
-  public static String userPictureFilePath = TestDataGenerator.getRandomFilePath();
+  public static String userPictureFilePath = TestDataGenerator.getFilePath();
   public static String userPictureFileName = TestDataGenerator.getFileName(userPictureFilePath);
   public static String userState = TestDataGenerator.getState();
   public static String userCity = TestDataGenerator.getCity(userState);

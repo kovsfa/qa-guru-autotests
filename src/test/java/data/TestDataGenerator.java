@@ -5,7 +5,6 @@ import com.github.javafaker.Faker;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Random;
@@ -29,8 +28,8 @@ public class TestDataGenerator {
       Map.entry("Uttar Pradesh", new String[]{"Agra", "Lucknow", "Merrut"}),
       Map.entry("Haryana", new String[]{"Karnal", "Panipat"}),
       Map.entry("Rajasthan", new String[]{"Jaipur", "Jaiselmer"}));
-  private static final List<String> assetFiles = List.of("assets/cat.jpg", "assets/dog.jpeg",
-      "assets/parrot.jpg", "assets/turtle.jpg");
+  private static final String[] assetFiles = new String[]{"assets/cat.jpg", "assets/dog.jpeg",
+      "assets/parrot.jpg", "assets/turtle.jpg"};
 
 
   public static String getFirstName() {
@@ -73,8 +72,8 @@ public class TestDataGenerator {
     return faker.options().option(hobbies);
   }
 
-  public static String getRandomFilePath() {
-    return assetFiles.get(random.nextInt(assetFiles.size()));
+  public static String getFilePath() {
+    return faker.options().option(assetFiles);
   }
 
   public static String getFileName(String filePath) {
