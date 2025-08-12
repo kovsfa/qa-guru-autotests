@@ -56,7 +56,7 @@ public class TestDataGenerator {
     return faker.phoneNumber().subscriberNumber(10);
   }
 
-  public static Date getBirthDate() {
+  public static Date getDateOfBirth() {
     return faker.date().birthday();
   }
 

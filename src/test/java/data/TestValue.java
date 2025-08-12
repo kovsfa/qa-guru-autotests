@@ -10,7 +10,7 @@ public class TestValue {
   public static String userAddress = TestDataGenerator.getAddress();
   public static String userGender = TestDataGenerator.getGender();
   public static String userPhoneNumber = TestDataGenerator.getPhoneNumber();
-  public static Date userBirthDate = TestDataGenerator.getBirthDate();
+  public static Date userBirthDate = TestDataGenerator.getDateOfBirth();
   public static String userBirthDateFormatted = TestDataGenerator.formatDate(userBirthDate);
   public static String userSubjects = TestDataGenerator.getSubject();
   public static String userHobby = TestDataGenerator.getHobby();
