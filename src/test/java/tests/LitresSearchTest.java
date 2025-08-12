@@ -1,12 +1,17 @@
 package tests;
 
+import static com.codeborne.selenide.Condition.href;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -31,5 +36,15 @@ public class LitresSearchTest {
     $("[name=q]").setValue(authorName).pressEnter();
     $("[data-testid=art__wrapper]").click();
     $$("span").findBy(text(authorName));
+  }
+
+  @CsvFileSource(resources = "/test_data/searchResultShouldContainAuthorUrl.csv")
+  @ParameterizedTest(name = "Для поискового запроса {0} в первой карточке должна быть ссылка {1}")
+  void searchResultShouldContainExpectedUrl(String searchQuery, String expectedLink) {
+    $("[name=q]").setValue(searchQuery).pressEnter();
+    ElementsCollection cards = $$("[data-testid=art__wrapper]").filterBy(visible);
+    SelenideElement firstCard = cards.first();
+    firstCard.$("a[href*='/author/']")
+        .shouldHave(href(expectedLink));
   }
 }
