@@ -1,0 +1,10 @@
+{
+  "name": "Барсик",
+  "vaccinated": true,
+  "age": 3,
+  "diseases": ["ринит", "аллергия"],
+  "owner": {
+    "fullName": "Иван Иванов",
+    "phone": "+77001234567"
+  }
+}
